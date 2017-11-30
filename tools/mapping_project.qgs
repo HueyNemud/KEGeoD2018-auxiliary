@@ -22,10 +22,10 @@
     </layer-tree-group>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="Distortion-measures">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="rues_vs_grid20171130163825943" source="/tmp/KEGeoD2018-auxiliary/srcdata/distortion_measures/rues_vs_grid.shp" name="rues_vs_grid">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="rues_vs_grid20171130163825943" source="/tmp/KEGeoD2018-auxiliary/srcdata/distortion_measures/rues_vs_grid.shp" name="streets-distortions">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="bati_vs_grid20171130165437307" source="/tmp/KEGeoD2018-auxiliary/srcdata/distortion_measures/bati_vs_grid.shp" name="bati_vs_grid">
+      <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="bati_vs_grid20171130165437307" source="/tmp/KEGeoD2018-auxiliary/srcdata/distortion_measures/bati_vs_grid.shp" name="buildings-distortions">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="rues_vs_grid_x_final20171130164309612" source="/tmp/KEGeoD2018-auxiliary/srcdata/distortion_measures/rues_vs_grid_x_final.tif" name="streets_dist-x">
@@ -47,7 +47,7 @@
     <units>meters</units>
     <extent>
       <xmin>596510.0611604651203379</xmin>
-      <ymin>125749.97504963476967532</ymin>
+      <ymin>125749.97504963475512341</ymin>
       <xmax>604506.03488960966933519</xmax>
       <ymax>132000.46594749740324914</ymax>
     </extent>
@@ -125,12 +125,12 @@
       </legendlayer>
     </legendgroup>
     <legendgroup open="true" checked="Qt::Checked" name="Distortion-measures">
-      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="rues_vs_grid" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="streets-distortions" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="rues_vs_grid20171130163825943" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="bati_vs_grid" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="buildings-distortions" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="bati_vs_grid20171130165437307" visible="1"/>
         </filegroup>
@@ -164,7 +164,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>bati_vs_grid</layername>
+      <layername>buildings-distortions</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=lcc +nadgrids=ntf_r93.gsb,null +a=6378249.2000 +rf=293.4660210000000 +pm=2.337229167 +lat_0=49.500000000 +lon_0=0.000000000 +k_0=0.99987734 +lat_1=49.500000000 +x_0=600000.000 +y_0=200000.000 +units=m +no_defs</proj4>
@@ -532,6 +532,7 @@
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Noto Sans,9,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -557,7 +558,7 @@
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="X_RESIDUAL" index="0" name=""/>
         <alias field="Y_RESIDUAL" index="1" name=""/>
@@ -569,7 +570,7 @@
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="-242979888">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="X_RESIDUAL"/>
           <column width="-1" hidden="0" type="field" name="Y_RESIDUAL"/>
@@ -580,10 +581,10 @@
           <column width="-1" hidden="1" type="actions"/>
         </columns>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 Les formulaires QGIS peuvent avoir une fonction Python qui sera appelée à l'ouverture du formulaire.
@@ -1034,7 +1035,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>rues_vs_grid</layername>
+      <layername>streets-distortions</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=lcc +nadgrids=ntf_r93.gsb,null +a=6378249.2000 +rf=293.4660210000000 +pm=2.337229167 +lat_0=49.500000000 +lon_0=0.000000000 +k_0=0.99987734 +lat_1=49.500000000 +x_0=600000.000 +y_0=200000.000 +units=m +no_defs</proj4>
@@ -1402,6 +1403,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Noto Sans,9,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -1427,7 +1429,7 @@ def my_form_open(dialog, layer, feature):
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="X_RESIDUAL" index="0" name=""/>
         <alias field="Y_RESIDUAL" index="1" name=""/>
@@ -1439,7 +1441,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="-270150496">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="X_RESIDUAL"/>
           <column width="-1" hidden="0" type="field" name="Y_RESIDUAL"/>
@@ -1450,10 +1452,10 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="1" type="actions"/>
         </columns>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 Les formulaires QGIS peuvent avoir une fonction Python qui sera appelée à l'ouverture du formulaire.
